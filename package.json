@@ -6,7 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "esbuild index.js --bundle  --outfile=bundle.js --watch"
-
   },
   "repository": {
     "type": "git",
@@ -18,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/sjtinsley/notesapp/issues"
   },
-  "homepage": "https://github.com/sjtinsley/notesapp#readme"
+  "homepage": "https://github.com/sjtinsley/notesapp#readme",
+  "dependencies": {
+    "jest-environment-jsdom": "^28.1.0"
+  }
 }

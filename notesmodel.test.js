@@ -1,4 +1,4 @@
-const NotesModel = require('./notesmodel')
+const NotesModel = require('./notesModel')
 
 describe('NotesModel', () => {
 
