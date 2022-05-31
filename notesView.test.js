@@ -15,14 +15,14 @@ describe(`NotesView`, () => {
   describe(`#displayNotes`, () => {
     it(`can start with no notes`, () => {
       const model = new NotesModel();
-      const view = new NotesView();
+      const view = new NotesView(model);
 
       expect(document.querySelectorAll('div.note').length).toBe(0);
     });
 
     it(`can display two notes`, () => {
       const model = new NotesModel();
-      const view = new NotsView();
+      const view = new NotesView(model);
 
       model.addNote('A first note');
       model.addNote('A second note');
