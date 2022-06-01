@@ -21,7 +21,12 @@ class NotesView {
 
     removeNotes.forEach( note => {
       note.remove();
+      document.querySelector('#add-note-input').value = "";
     })
+
+    // document.querySelectorAll('.note').forEach(element => {
+    //   Element.remove();
+    // });
     
     const notes = this.model.getNotes()
 

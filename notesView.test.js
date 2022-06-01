@@ -46,7 +46,7 @@ describe(`NotesView`, () => {
       expect(document.querySelectorAll(`div.note`)[0].innerText).toEqual("This is a new test note");
     })
 
-    it(`when displayNotes is called twice it will still display the right number notes`, () => {
+    it(`clear the lost of previous notes before displaying`, () => {
       const model = new NotesModel();
       const view = new NotesView(model);
 
