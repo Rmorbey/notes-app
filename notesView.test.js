@@ -32,7 +32,7 @@ describe(`NotesView`, () => {
       expect(document.querySelectorAll(`div.note`).length).toEqual(2);
     })
 
-    it(`clicks a button and adds a note`, () => {
+    it(`clicks a button and adds a new note`, () => {
       const model = new NotesModel();
       const view = new NotesView(model);
 
