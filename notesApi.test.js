@@ -49,7 +49,7 @@ describe('Notes Api class', () => {
       fetch.mockResponseOnce( async (request) => {
         try {
           expect(request.method).toBe('POST');
-          const requestBody = await response.json();
+          const requestBody = await request.json();
           expect(requestBody.content).toEqual('A new note.');
         } catch (error) {
           console.log('error:', error);
