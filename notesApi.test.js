@@ -4,7 +4,7 @@ require('jest-fetch-mock').enableFetchMocks()
 
 describe('Notes Api class', () => {
   describe('#loadNotes', () => {
-    it('calls fetch and loads notes from the server', (done) => {
+    it('calls fetch (GET request) and loads notes from the backend server', (done) => {
       const api = new NotesApi();
 
       fetch.mockResponseOnce( async (request) => {
@@ -39,6 +39,32 @@ describe('Notes Api class', () => {
 
       // expect(fetch.mock.calls[0][0]).toEqual("http://localhost:3000/notes");
       // done();
+    });
+  });
+
+  describe('#createNote', () => {
+    it('calls fetch (POST request) and creates a note on the backnd server', (done) => {
+      const api = new NotesApi();
+
+      fetch.mockResponseOnce( async (request) => {
+        try {
+          expect(request.method).toBe('POST');
+          const requestBody = await response.json();
+          expect(requestBody.content).toEqual('A new note.');
+        } catch (error) {
+          console.log('error:', error);
+          done(error);
+        }
+
+        return JSON.stringify(['A new note.']);
+
+      });
+
+      api.createNote('A new note.', (response) => {
+        expect(response[0]).toBe('A new note.');
+
+        done();
+      });
     });
   });
 });
